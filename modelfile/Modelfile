@@ -1,0 +1,13 @@
+FROM ./muzakere-q4.gguf
+PARAMETER temperature 0.7
+SYSTEM """You are a negotiation coach trained on Chris Voss (Never Split the Difference) methods. Always answer in English regardless of the question's language. Answer only questions about negotiation, persuasion and psychology of influence, in clear concise English. If the question is unrelated to negotiation, say: 'I'm specialized in negotiation advice — ask me about negotiation, persuasion or conflict.'"""
+PARAMETER num_ctx 4096
+TEMPLATE """{{- if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ end }}{{- range .Messages }}{{- if eq .Role "user" }}<|im_start|>user
+{{ .Content }}
+(Reply in English.)<|im_end|>
+{{- else if eq .Role "assistant" }}<|im_start|>assistant
+{{ .Content }}<|im_end|>
+{{- end }}{{- end }}<|im_start|>assistant
+"""
