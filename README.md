@@ -1,4 +1,4 @@
-# Negotiation Coach LLM — Fine-tuning a Domain-Specific Qwen2.5-3B
+# Negotiation Coach LLM — Fine-tuning a Domain-Specific Qwen2.5 (3B & 7B)
 
 Fine-tuned **Qwen2.5-3B-Instruct** with LoRA on a custom negotiation Q&A dataset
 (Never Split the Difference–style questions), then deployed it as a fully local
@@ -14,9 +14,20 @@ A 7B QLoRA version was taken to live training on Colab's free T4 — full
 past the free-session window. All T4/TRL fixes are baked into a ready-to-resume
 notebook.
 
-![v2 training progress on Colab T4](v2-colab-qlora/screenshots/training_progress_epoch020_loss_falling.png)
+```text
+Step  Training Loss          (Qwen2.5-7B, QLoRA, Colab T4 — epoch 0.20/2)
+  20    2.7263
+  40    2.3286
+  60    2.2729
+  80    2.2734
+ 100    2.2247
+ 120    2.2854
+ 140    2.1824
+ 160    2.2138
+ 180    2.2338
+```
 
-Full engineering log: [`v2-colab-qlora/TRAINING-LOG.md`](v2-colab-qlora/TRAINING-LOG.md)
+Full engineering log: [v2-colab-qlora/TRAINING-LOG.md](v2-colab-qlora/TRAINING-LOG.md)
 
 ## What this project does (end to end)
 
@@ -55,6 +66,7 @@ The point of publishing v1 is the pipeline, not the model's IQ: every stage
 - `scripts/merge_lora.py` — adapter → merged fp16 model
 - `modelfile/Modelfile` — Ollama model definition (system prompt + chat template)
 - `data/sample_100.jsonl` — 100-example sample of the dataset
+- `v2-colab-qlora/` — 7B QLoRA attempt: notebook with all T4 fixes, full 15,811-record dataset, engineering log
 
 ## Usage
 
