@@ -42,8 +42,9 @@ Measured on a CPU-only machine (i5-13420H, 16 GB RAM):
 - **v1 (1 epoch, lr 2e-4, 286 steps):** the model picked up the domain vocabulary
   but the light training dose hurt its instruction-following outside its domain —
   known trade-off of narrow single-epoch SFT.
-- **v2 (in progress):** expanded dataset (8k+), 3 epochs, lr 1e-4, r=32 —
-  targeting consistent domain behavior without losing general compliance.
+- **v2 (7B QLoRA, live-trained on Colab T4):** full 15,811-record dataset,
+  2 epochs, r=16 / α=32 — see the v2 section above. Training confirmed working
+  (loss 2.73 → 2.24 by epoch 0.2); paused at free-tier session limits.
 
 The point of publishing v1 is the pipeline, not the model's IQ: every stage
 (data → train → merge → quantize → deploy) is scripted and reproducible.
