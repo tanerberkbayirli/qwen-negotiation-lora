@@ -4,6 +4,20 @@ Fine-tuned **Qwen2.5-3B-Instruct** with LoRA on a custom negotiation Q&A dataset
 (Never Split the Difference–style questions), then deployed it as a fully local
 CPU-only chat model via GGUF + Ollama.
 
+
+
+## v2: Qwen2.5-7B QLoRA on Colab free tier (latest)
+
+A 7B QLoRA version was taken to live training on Colab's free T4 — full
+15,811-record dataset validated, training running, loss falling from **2.73 to
+2.24** by epoch 0.2 — and paused only because a 2-epoch run needs ~10 GPU-hours,
+past the free-session window. All T4/TRL fixes are baked into a ready-to-resume
+notebook.
+
+![v2 training progress on Colab T4](v2-colab-qlora/screenshots/training_progress_epoch020_loss_falling.png)
+
+Full engineering log: [`v2-colab-qlora/TRAINING-LOG.md`](v2-colab-qlora/TRAINING-LOG.md)
+
 ## What this project does (end to end)
 
 | Stage | Tool | Output |
@@ -53,12 +67,14 @@ ollama run muzakere
 Taner Berk Bayirli — built end-to-end with an AI agent pair-programming setup
 (dataset design, training runs, deployment pipeline).
 
-## v2 attempt: Qwen2.5-7B QLoRA on Colab free tier (2026-11)
 
-A 7B QLoRA version was taken all the way to live training on Colab's free T4:
-full 15,811-record dataset validated, training started, loss decreasing — then
-stopped only because a 2-epoch run needs ~10 GPU-hours, past the free-session
-window. All T4/TRL fixes are baked into a ready-to-resume notebook.
+## Author
 
-See [`v2-colab-qlora/TRAINING-LOG.md`](v2-colab-qlora/TRAINING-LOG.md) for the
-full engineering log, fixes, and screenshot evidence.
+Taner Berk Bayirli — built end-to-end with an AI agent pair-programming setup
+(dataset design, training runs, deployment pipeline).
+
+
+## Author
+
+Taner Berk Bayirli — built end-to-end with an AI agent pair-programming setup
+(dataset design, training runs, deployment pipeline).
