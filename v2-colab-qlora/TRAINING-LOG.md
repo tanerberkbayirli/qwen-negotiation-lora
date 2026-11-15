@@ -37,7 +37,20 @@ attempt so it can be resumed on any GPU with >16 GB VRAM with zero code changes.
 
 ## Evidence
 
-![Training progress: loss falling 2.73 → 2.24 by epoch 0.2/2](screenshots/training_progress_epoch020_loss_falling.png)
+```text
+Step  Training Loss          (Qwen2.5-7B, QLoRA, Colab T4 — epoch 0.20/2)
+  20    2.7263
+  40    2.3286
+  60    2.2729
+  80    2.2734
+ 100    2.2247
+ 120    2.2854
+ 140    2.1824
+ 160    2.2138
+ 180    2.2338
+```
+
+Live screenshot: [screenshots/training_progress_epoch020_loss_falling.png](screenshots/training_progress_epoch020_loss_falling.png)
 
 ## Files
 
