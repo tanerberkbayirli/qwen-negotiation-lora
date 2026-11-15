@@ -64,17 +64,4 @@ ollama run muzakere
 
 ## Author
 
-Taner Berk Bayirli — built end-to-end with an AI agent pair-programming setup
-(dataset design, training runs, deployment pipeline).
-
-
-## Author
-
-Taner Berk Bayirli — built end-to-end with an AI agent pair-programming setup
-(dataset design, training runs, deployment pipeline).
-
-
-## Author
-
-Taner Berk Bayirli — built end-to-end with an AI agent pair-programming setup
-(dataset design, training runs, deployment pipeline).
+Taner Berk Bayirli — built end-to-end with an AI agent pair-programming setup (dataset design, training runs, deployment pipeline).
